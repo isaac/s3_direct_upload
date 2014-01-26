@@ -6,7 +6,7 @@ module S3DirectUpload
         uploader.fields.map do |name, value|
           hidden_field_tag(name, value)
         end.join.html_safe + capture(&block)
-      end
+      end.gsub("form", "div").html_safe
     end
 
     class S3Uploader
